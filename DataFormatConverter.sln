@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFormatConverter", "DataFormatConverter\DataFormatConverter.csproj", "{609F07C9-9CBC-454A-8494-22A3E5A52427}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{609F07C9-9CBC-454A-8494-22A3E5A52427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609F07C9-9CBC-454A-8494-22A3E5A52427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609F07C9-9CBC-454A-8494-22A3E5A52427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609F07C9-9CBC-454A-8494-22A3E5A52427}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {625A8AC8-25B7-4878-BB27-495A1EFCAFBC}
+	EndGlobalSection
+EndGlobal
