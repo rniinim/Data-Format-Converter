@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataFormatConverter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="500">
+        Title="MainWindow" Height="450" Width="450" ResizeMode="NoResize">
     <Grid>
-        <Button Name="readFileBtn" HorizontalAlignment="Left" Margin="50,240,0,129" Width="150" Click="ReadFileBtn_Click"  >
+        <Button Name="readFileBtn" HorizontalAlignment="Left" Margin="63,280,0,88" Width="150" Click="ReadFileBtn_Click"  >
             Read File
         </Button>
-        <ComboBox Name="TypeCmbx" HorizontalAlignment="Left" Margin="220,240,0,0" VerticalAlignment="Top" Width="155" Height="50"  IsReadOnly="True" Text="-- Select Team --" AllowDrop="True" >
-            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-            <ComboBoxItem>ComboBox Item #2</ComboBoxItem>
-            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+        <ComboBox Name="TypeCmbx" HorizontalAlignment="Left" Margin="218,298,0,0" VerticalAlignment="Top" Width="155" Height="25"  IsReadOnly="True" Text="-- Select Team --" AllowDrop="True" >
+            <ComboBoxItem Name="xmlItem">XML</ComboBoxItem>
+            <ComboBoxItem Name="jsonItem">JSON</ComboBoxItem>
+            <ComboBoxItem Name="csvItem">CSV</ComboBoxItem>
         </ComboBox>
-        <Button Name="SaveFileBtn" HorizontalAlignment="Left" Margin="50,325,0,0" VerticalAlignment="Top" Width="325" Height="50" Click="SaveFileBtn_Click">
+        <Button Name="SaveFileBtn" HorizontalAlignment="Left" Margin="63,347,0,0" VerticalAlignment="Top" Width="325" Height="50" Click="SaveFileBtn_Click">
             Save converted File
         </Button>
-        <TextBlock Name="MainTextBlock"  HorizontalAlignment="Left" Height="180" Margin="50,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215"/>
+        <TextBlock Name="MainTextBlock"  HorizontalAlignment="Left" Height="204" Margin="64,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="324" FontFamily="Courier New" FontSize="18"/>
+        <Label Content="Convert to:" HorizontalAlignment="Left" Margin="218,269,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
