@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Windows;
+using System.Windows.Forms;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using System.Xml;
@@ -13,28 +14,33 @@ namespace DataFormatConverter
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string path = "";
+        private string jsonText = "";
+        XmlDocument doc;
         public MainWindow()
         {
             InitializeComponent();
         }
         
-
+        /// <summary>
+        /// Reads file and converts it to desired form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ReadFileBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainTextBlock.Text = "";
-            string content = "";
-            XmlDocument doc;
+            string content = MainTextBlock.Text = path = "";
+            
             var fileContent = string.Empty;
             var filePath = string.Empty;
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Json files (.json)|*.json|Xml files (.xml)|*.xml";
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Filter = "Json file |*.json|Xml file |*.xml";
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            //openFileDialog.RestoreDirectory = true;
-            string path = "";
+            openFileDialog.RestoreDirectory = true;
+            
             if (openFileDialog.ShowDialog() == true)
             {
-                foreach (string filename in openFileDialog.FileNames)
-                filePath = (Path.GetFileName(filename));
+                filePath = (Path.GetFileName(openFileDialog.FileName));
                 MainTextBlock.Text += "File opened from: \n";
                 MainTextBlock.Text += openFileDialog.FileName;
                 path = Path.GetExtension(filePath);
@@ -48,7 +54,7 @@ namespace DataFormatConverter
             {
                 doc = new XmlDocument();
                 doc.LoadXml(content);
-                string jsonText = JsonConvert.SerializeXmlNode(doc);
+                jsonText = JsonConvert.SerializeXmlNode(doc);
 
                 MainTextBlock.Text += "\n xml file transformed to json";
                 
@@ -60,9 +66,34 @@ namespace DataFormatConverter
             }
             else
             {
-
+                
             }
             
+        }
+
+        private void SaveFileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog();
+            if (path == ".xml")
+            {
+                saveFileDialog.Filter = "Json file |*.json|Text file |*.txt";
+                if (saveFileDialog.ShowDialog() == true)
+                {
+                    File.WriteAllText(saveFileDialog.FileName, jsonText);
+                    MainTextBlock.Text += "\n New file successfully saved!";
+                }
+            }
+            else if (path == ".json")
+            {
+                saveFileDialog.Filter = "XML File | *.xml|Text file | *.txt";
+                if (saveFileDialog.ShowDialog() == true)
+                {
+                    doc.Save(saveFileDialog.FileName);
+                    MainTextBlock.Text += "\n New file successfully saved!";
+                }
+
+            }
+
         }
     }
 }

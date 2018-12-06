@@ -10,9 +10,13 @@
         <Button Name="readFileBtn" HorizontalAlignment="Left" Margin="50,240,0,129" Width="150" Click="ReadFileBtn_Click"  >
             Read File
         </Button>
-        <ComboBox HorizontalAlignment="Left" Margin="220,240,0,0" VerticalAlignment="Top" Width="155" Height="50"/>
-        <Button HorizontalAlignment="Left" Margin="50,325,0,0" VerticalAlignment="Top" Width="325" Height="50">
-            Convert File
+        <ComboBox Name="TypeCmbx" HorizontalAlignment="Left" Margin="220,240,0,0" VerticalAlignment="Top" Width="155" Height="50"  IsReadOnly="True" Text="-- Select Team --" AllowDrop="True" >
+            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
+            <ComboBoxItem>ComboBox Item #2</ComboBoxItem>
+            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+        </ComboBox>
+        <Button Name="SaveFileBtn" HorizontalAlignment="Left" Margin="50,325,0,0" VerticalAlignment="Top" Width="325" Height="50" Click="SaveFileBtn_Click">
+            Save converted File
         </Button>
         <TextBlock Name="MainTextBlock"  HorizontalAlignment="Left" Height="180" Margin="50,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215"/>
     </Grid>
