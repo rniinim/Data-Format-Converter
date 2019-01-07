@@ -7,18 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="450" ResizeMode="NoResize">
     <Grid>
-        <Button Name="readFileBtn" HorizontalAlignment="Left" Margin="63,280,0,88" Width="150" Click="ReadFileBtn_Click"  >
+        <Button Name="readFileBtn" HorizontalAlignment="Left" Margin="63,280,0,88" Width="325" Click="ReadFileBtn_Click"  FontSize="18" >
             Read File
         </Button>
-        <ComboBox Name="TypeCmbx" HorizontalAlignment="Left" Margin="218,298,0,0" VerticalAlignment="Top" Width="155" Height="25"  IsReadOnly="True" Text="-- Select Team --" AllowDrop="True" >
-            <ComboBoxItem Name="xmlItem">XML</ComboBoxItem>
-            <ComboBoxItem Name="jsonItem">JSON</ComboBoxItem>
-            <ComboBoxItem Name="csvItem">CSV</ComboBoxItem>
-        </ComboBox>
-        <Button Name="SaveFileBtn" HorizontalAlignment="Left" Margin="63,347,0,0" VerticalAlignment="Top" Width="325" Height="50" Click="SaveFileBtn_Click">
+        <Button Name="SaveFileBtn" HorizontalAlignment="Left" Margin="63,347,0,0" VerticalAlignment="Top" Width="325" Height="50" Click="SaveFileBtn_Click" FontSize="18">
             Save converted File
         </Button>
-        <TextBlock Name="MainTextBlock"  HorizontalAlignment="Left" Height="204" Margin="64,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="324" FontFamily="Courier New" FontSize="18"/>
-        <Label Content="Convert to:" HorizontalAlignment="Left" Margin="218,269,0,0" VerticalAlignment="Top"/>
+        <Grid Margin="10,38,10,185">
+            <ScrollViewer>
+                <TextBlock Name="MainTextBlock"  HorizontalAlignment="Center" Height="auto" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="383" FontFamily="Courier New" FontSize="18"/>
+            </ScrollViewer>
+        </Grid>
+
     </Grid>
 </Window>
